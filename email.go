@@ -8,8 +8,8 @@ import (
 )
 
 type Payload struct {
-	UserAccount string   `json:"userAccount" env:"EMAIL_ACCOUNT"`
-	Secret      string   `json:"secret" env:"EMAIL_SECRET"`
+	UserAccount string   `json:"userAccount" env:"EMAIL_ACCOUNT"` // account
+	Secret      string   `json:"secret" env:"EMAIL_SECRET"`       // secret
 	Subject     string   `json:"subject" default:"email by go"`
 	To          []string `json:"to"`
 	Body        string   `json:"body" default:"email by go"`
