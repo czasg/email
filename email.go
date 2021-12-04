@@ -10,7 +10,7 @@ import (
 type Payload struct {
 	UserAccount string   `json:"userAccount" env:"EMAIL_ACCOUNT"` // account
 	Secret      string   `json:"secret" env:"EMAIL_SECRET"`       // secret
-	Subject     string   `json:"subject" default:"email by go"`
+	Subject     string   `json:"subject" default:"email by go"`   // subject
 	To          []string `json:"to"`
 	Body        string   `json:"body" default:"email by go"`
 	Host        string   `json:"host" default:"smtp.qq.com"`
