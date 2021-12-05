@@ -34,10 +34,9 @@ func SendMail(payload Payload) error {
 		fmt.Sprintf("From: %s", payload.UserAccount),
 		fmt.Sprintf("\r\n%s", payload.Body),
 	}
-	auth := smtp.PlainAuth("", payload.UserAccount, payload.Secret, payload.Host)
 	return smtp.SendMail(
 		payload.Host+":"+payload.Port,
-		auth,
+		smtp.PlainAuth("", payload.UserAccount, payload.Secret, payload.Host),
 		payload.UserAccount,
 		payload.To,
 		[]byte(strings.Join(message, "\r\n")),
